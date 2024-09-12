@@ -47,6 +47,10 @@ nav{
 .btn{
     padding: 20px 30px;
     border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.05);
 }
 
 a.btn{
@@ -60,13 +64,13 @@ a.btn{
 
 main {
     display: flex;
-    padding: 20px;
+    padding: 0px;
 }
 
 section.graph {
     width: 33%;
     height: 100%;
-    padding: 5px;
+    padding: 20px 20px 0 20px;
 }
 
 .graph_header{
@@ -92,6 +96,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 10px;
 }
 
 .graph_header-subtitle{
@@ -118,7 +123,7 @@ h2 {
 }
 
 .list{
-    padding: 5px 15px;
+    padding: 20px 20px 0 2px;
     flex: 1;
 }
 
@@ -127,7 +132,11 @@ h2 {
 }
 
 .list_header-select{
+    background-color: transparent;
+    border: 0;
 
+    font-size: 18px;
+    color: var(--text-dark);
 }
 
 .task_list {
@@ -146,7 +155,15 @@ h2 {
     padding: 30px 15px;
     margin-bottom: 10px;
     border-bottom: 4px solid var(--background-light);
+    transition: all .3s ease-in-out;
 }
+
+.task:hover{
+    transform: scale(1.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .task:hover{
     background-color: var(--background-light);
 }
@@ -173,6 +190,11 @@ h2 {
 .actions a {
     margin-left: 20px;
     margin-right: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.actions>a:hover{
+    transform: scale(1.50);
 }
 
 .sphere {
