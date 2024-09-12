@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,12 +16,14 @@ class DatabaseSeeder extends Seeder
 
         // passando qual class vai rodar no nosso comando
         $this->call([
-            UserSeeder::class,
-            CategorySeeder::class,
-            TaskSeeder::class,
+            // UserSeeder::class,
+
         ]);
 
-
+        // usando o model
+        User::factory(40)->create();
+        Category::factory(30)->create(); //vai rodar 5 vezes
+        Task::factory(100)->create();
 
     }
 }
