@@ -30,6 +30,10 @@ body{
     background-color: var(--color-primary);
 }
 
+.sidebar img {
+    max-width: 100%;
+}
+
 nav{
     height: 100px;
     background-color: var(--background-light);
@@ -68,16 +72,26 @@ section.graph {
 .graph_header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 h2 {
-    flex: 1;
-
+    flex: 3;
     display: inline-block;
 }
 
-hr.LinhaHeader {
-    width: 130px;
+.graph_header-line{
+    flex: 1;
+    width: 200px;
+    background-color: rgba(0,0,0,.2);
+    height: 2px;
+}
+
+.graph_header-date{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .graph_header-subtitle{
@@ -85,16 +99,22 @@ hr.LinhaHeader {
 }
 
 .graph-placeholder{
+
     background-color: #ccc;
     width: 300px;
     height: 300px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 35px;
+    background: url('/assests/imagens/graph.png');
+    background-size: contain;
 }
 
-.graph_header-tasks_left{
-   text-align: center;
-    margin-top: 10px;
+.tasks_left_footer{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .list{
@@ -148,6 +168,11 @@ hr.LinhaHeader {
 .actions{
     display: flex;
     justify-content: flex-end;
+}
+
+.actions a {
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 .sphere {

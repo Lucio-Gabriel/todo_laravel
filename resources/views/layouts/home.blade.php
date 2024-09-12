@@ -17,20 +17,25 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            Logo
+
+            <img src="/assests/imagens/logo.png" alt="">
+
         </div>
         <div class="content">
             <nav>
                 <a href="#" class="btn btn-primary">
                     Criar Tarefa
+
                 </a>
             </nav>
             <main>
                 <section class="graph">
                     <div class="graph_header">
-                        <h2> Progresso do Dia </h2>
-                        <hr class="LinhaHeader" />
-                        Data
+                        <h2> Progresso do Dia  </h2>
+                        <div class="graph_header-line"></div>
+                        <div class="graph_header-date">
+                            Data
+                        </div>
                     </div>
                     <div class="graph_header-subtitle">
                         Tarefas: <b>3/6</b>
@@ -39,7 +44,12 @@
                     <div class="graph-placeholder" >
                     </div>
 
-                    <p class="graph_header-tasks_left"> Restam 3 tarefas para serem realizdas </p>
+                    <div class="tasks_left_footer">
+                        <img src="/assests/imagens/icon-info.png" alt="">
+                         Restam 3 tarefas para serem realizdas
+                    </div>
+
+
 
                 </section>
                 <section class="list">
@@ -63,7 +73,14 @@
                             </div>
 
                             <div class="actions">
-                                Editar - Excluir
+                                <a href="#">
+                                <img src="/assests/imagens/icon-edit.png" alt="">
+                                </a>
+
+                                <a href="#">
+                                    <img src="/assests/imagens/icon-delete.png" alt="">
+                                </a>
+
                             </div>
 
                         </div>
