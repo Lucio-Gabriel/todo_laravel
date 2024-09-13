@@ -1,11 +1,7 @@
 <x-layout>
 
     <x-slot:btn>
-        <a href="#" class="btn btn-primary">
-            Criar Tarefa
-        </a>
-
-        <a href="#" class="btn btn-primary">
+        <a href="{{route('task.create')}}" class="btn btn-primary">
             Criar Tarefa
         </a>
     </x-slot:btn>
@@ -50,16 +46,28 @@
             @php
                 // Array das nossas tarefas
                 $tasks = [
-                    [  'id'=> 1,'done' => false, 'title' => 'Minha Primeira Task', 'category' => 'Categoria 1', 'edit_url' => 'https://google.com.br', 'delete_url' => 'https://b7web.com.br'],
-                    [ 'id'=> 2, 'done' => true, 'title' => 'Minha Segunda Task', 'category' => 'Categoria 2', 'edit_url' => 'https://google.com.br', 'delete_url' => 'https://b7web.com.br'],
-                    [ 'id'=> 3, 'done' => false, 'title' => 'Minha Terceira Task', 'category' => 'Categoria 1',
-                    'edit_url' => 'https://google.com.br', 'delete_url' => 'https://b7web.com.br'],
+                    [ 'id'=> 1,
+                    'done' => false,
+                    'title' => 'Minha Primeira Task',
+                    'category' => 'Categoria 1',
+                    'edit_url' => 'https://google.com.br',
+                    'delete_url' => 'https://b7web.com.br'
+                    ],
+
+                    [ 'id'=> 2, 'done' => true,
+                     'title' => 'Minha Segunda Task',
+                      'category' => 'Categoria 2',
+                      'edit_url' => 'https://google.com.br',
+                      'delete_url' => 'https://b7web.com.br'
+                    ],
+
+
                 ]
             @endphp
 
             <x-task :data=$tasks[0] />
             <x-task :data=$tasks[1] />
-            <x-task :data=$tasks[2] />
+
 
         </div>
     </section>

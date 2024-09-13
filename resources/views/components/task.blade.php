@@ -14,11 +14,11 @@
     </div>
 
     <div class="actions">
-        <a href="{{$data['edit_url'] ?? ''}}">
+        <a href="{{route('task.edit')}}">
         <img src="/assests/imagens/icon-edit.png" alt="">
         </a>
 
-        <a href="{{$data['delete_url'] ?? ''}}">
+        <a href="{{route('task.delete')}}">
             <img src="/assests/imagens/icon-delete.png" alt="">
         </a>
 
