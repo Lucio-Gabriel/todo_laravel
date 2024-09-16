@@ -35,11 +35,53 @@ class TaskController extends Controller
     }
 
     public function edit(Request $request){
-        return view('tasks.edit');
+        $id = $request->id;
+
+        // validadando ID
+        $task = Task::find($id);
+        if (!$task){
+            return redirect(route('home'));
+        }
+
+        // alimentando categorias
+        $categories = Category::all();
+        $data['categories'] = $categories;
+
+        $data['task'] = $task;
+        return view('tasks.edit', $data);
+    }
+
+    public function edit_action(Request $request){
+        $request_data = $request->only(['title', 'due_time', 'category_id', 'description']);
+
+        // selecionando o valor do nosso checkbox
+        $request_data['is_done'] = $request->is_done ? true : false;
+
+        // pegando o ID
+        $task = Task::find($request->id);
+        // verificando se o ID existe
+        if(!$task) {
+            return 'Erro de task não existente';
+        }
+        $task->update($request_data);
+        $task->save();
+        return redirect(route('home'));
+
     }
 
     public function delete(Request $request){
         // deleta e redireciona de volta para home
+
+        $id = $request->id;
+
+        $task = Task::find($id);
+
+        if($task){
+            $task->delete();
+        }
+
         return redirect(route('home'));
     }
+
+
 }
