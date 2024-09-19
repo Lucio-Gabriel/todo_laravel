@@ -10,8 +10,15 @@ use Termwind\Components\Raw;
 class TaskController extends Controller
 {
     //
-    public function index(){
+    public function update(Request $request){
+        $task = Task::findOrFail($request->taskId);
+        $task->is_done = $request->status;
+        $task->save();
+        return ['success' => true];
+    }
 
+    public function index(){
+        // return view('home');
     }
 
     public function create(Request $request){
